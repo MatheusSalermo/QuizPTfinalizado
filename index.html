@@ -1,0 +1,279 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+	<title> Etec Guaianazes</title>
+</head>
+
+<body>
+<div class="container-fluid" style="height: 700px; width:800px;">
+        <div class="row  main-row" >
+      <div class="col-md-12 col-sm-12 col-xs-7" > 
+        <center>
+            <h2 class="txt1" > Verbos: Tempos e Modos</h2>
+        <h2 id="questao" class="txt">  </h2>
+        </center>
+      </div>
+    </div>
+      <div class="col-md-12 col-sm-12 col-xs-7" style="height:400px; width:400px;margin-left: 20%" > 
+        <center>
+            <button class="botão1" id="q1" onclick="chamarproximapegunta(),adicionarcurso1(),validarresposta();" ></button> 
+        </center>
+      
+      
+        <center>
+        <button class="botão2" id="q2" onclick="chamarproximapegunta(),adicionarcurso2(),validarresposta();"></button>
+        </center>
+      
+      
+         <center>  
+        <button class="botão3" id="q3" onclick="chamarproximapegunta(),adicionarcurso3(),validarresposta();"></button>
+    </center>
+      
+
+        <center>
+            <button class="botão4" id="q4" onclick="chamarproximapegunta(),adicionarcurso4(),validarresposta();"></button>
+            </center>
+      </div>
+
+</div>
+
+
+
+</body>
+</html>
+<style type="text/css">
+@font-face {
+     font-family: helveticaneue;
+     src: url('CoalhandLuke TRIAL.otf');
+}
+body{
+   
+background-image: url(imagens/louza1.jpg);
+    
+    
+background-color: white;
+color: white;
+
+}
+h2{
+    font-family: helveticaneue;
+    font-size: 50px;
+}
+
+button{
+    border-radius: 10px;
+    color: white;
+    border:40px;
+    width: 300px;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 15%;
+}   
+
+.logo{
+    margin-top: 14%;
+}
+.botão1{
+    position:relative;
+    background-color: #696969; 
+}
+.botão2{
+    position:relative;
+    background-color: #696969;
+}
+.botão3{
+    position:relative;
+    background-color: #696969;
+}
+.botão4{
+    position:relative;
+    background-color: #696969;
+}
+.txt{
+    margin-top: 12%;
+}
+.txt1{
+    margin-top: 30px;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+    var audioerrado = new Audio("Sound/Som_Errado.mp3");
+    var audiocerto =  new Audio("Sound/Som_Certo.mp3");
+    var audiofinal = new Audio("Sound/Som_Final.mp3");
+	var numeroquestao = 0;
+	var resposta = 0;
+    var score = 0;
+
+ 
+	
+    function chamarproximapegunta(){
+    	numeroquestao = numeroquestao +1; 
+    	atualizarquestao();
+    }
+            if (numeroquestao == 0){document.getElementById("questao").innerHTML = "(TRT-RJ) “... fique alerta.” Se trocarmos a pessoa do verbo para a segunda do singular, mantendo-se o mesmo tempo e modo verbal, a frase teria a forma: ";
+     		document.getElementById("q1").innerHTML = "fica alerta";
+     		document.getElementById("q2").innerHTML = " fiquem alerta"; 
+     		document.getElementById("q3").innerHTML = "ficas alerta"; 
+     		document.getElementById("q4").innerHTML = "fiques alerta";
+        }
+
+     function atualizarquestao(){
+
+     	if  (numeroquestao == 1){document.getElementById("questao").innerHTML = "A frase 'Eu gosto de ler livros' se encontra em qual tempo e modo verbal?";
+     		document.getElementById("q1").innerHTML = "Presente do Subjuntivo" ; 
+     		document.getElementById("q2").innerHTML = "Imperativo Positivo";
+     		document.getElementById("q3").innerHTML = "Pretérito do Indicativo";
+     		document.getElementById("q4").innerHTML = "Presente do Indicativo";
+        }
+           
+        
+     	if(numeroquestao == 2){document.getElementById("questao").innerHTML = "O tempo verbal do modo indicativo,  que exprime fato não concluído, ação que se prolongou no passado é:";
+            document.getElementById("q1").innerHTML = "Pretérito Mais Que Perfeito";
+            document.getElementById("q2").innerHTML = "Pretérito Perfeito";
+            document.getElementById("q3").innerHTML = "Pretérito Imperfeito";
+            document.getElementById("q4").innerHTML = "Nenhuma da Alternativas";
+
+     }
+     	if(numeroquestao == 3){document.getElementById("questao").innerHTML = "O modo verbal que expressa uma dúvida, uma incerteza, ou uma possibilidade é: ";
+            document.getElementById("q1").innerHTML = "Imperativo";
+            document.getElementById("q2").innerHTML = "Indicativo";
+            document.getElementById("q3").innerHTML = "Subjuntivo";
+            document.getElementById("q4").innerHTML = "Gerúndio";
+     }
+     	if(numeroquestao == 4){document.getElementById("questao").innerHTML = "(Unemat - MT) <br>Considere as orações:<br>“Não faça pré-julgamento dos fatos. Analise-os”. <br>Em que alternativa seus verbos estão corretamente flexionados na 2ª pessoa do singular?";
+            document.getElementById("q1").innerHTML = "Não faças pré-julgamento dos fatos. Analisa-os.";
+            document.getElementById("q2").innerHTML = "Não faz pré-julgamento dos fatos. Analise-os";
+            document.getElementById("q3").innerHTML = "Não fazes pré-julgamento dos fatos. Analisa-os.";
+            document.getElementById("q4").innerHTML = "Nenhuma das Alternativas";
+     }
+     	if(numeroquestao == 5){document.getElementById("questao").innerHTML = "Complete a frase  com a forma correta do pretérito imperfeito do subjuntivo(simples):<br> 'Eu esperava que ele --------- o jogo' ";
+            document.getElementById("q1").innerHTML  = "Vence";
+            document.getElementById("q2").innerHTML  = "Vencer";
+            document.getElementById("q3").innerHTML  = "Vencia";
+            document.getElementById("q4").innerHTML  = "Vencesse";
+    }
+            if(numeroquestao == 6){document.getElementById("questao").innerHTML = "Qual modo verbal que expressa uma ação que provavelmente acontecerá, uma certeza, trabalhando com reais possibilidades de concretização da ação verbal ou com a certeza comprovada da realização daquela ação?";
+            document.getElementById("q1").innerHTML  = "Subjuntivo";
+            document.getElementById("q2").innerHTML  = "Indicativo";
+            document.getElementById("q3").innerHTML  = "Particípio";
+            document.getElementById("q4").innerHTML  = "Imperativo";
+     }
+ }
+
+      function adicionarcurso1(){
+        resposta = 1;    
+     }
+      function adicionarcurso2(){
+        resposta = 2; 
+    }
+      function adicionarcurso3(){
+     	resposta = 3; 
+     }
+      function adicionarcurso4(){
+     	resposta = 4; 
+     }
+
+     function validarresposta(){
+
+        if( numeroquestao == 1 && resposta == 1 ){
+            audiocerto.play();
+            alert ("Você acertou :)");   
+            score = 1  + score;       
+        }
+
+        if( numeroquestao == 1 && resposta >1 ){
+            audioerrado.play();
+            alert ("Você errou :(");
+        }
+
+        if (numeroquestao == 2 && resposta == 4){
+            audiocerto.play();
+            alert("Você acertou :)"); 
+            score = 1 + score;
+        }
+
+        if( numeroquestao == 2 && resposta <=3){
+            audioerrado.play();
+            alert ("Você errou :(");   
+        }
+
+        if (numeroquestao == 3 && resposta == 3){
+            audiocerto.play();
+            alert("Você acertou :)");
+            score = 1 + score;
+        }
+
+         if (numeroquestao == 3 && resposta <3){
+            audioerrado.play();
+            alert("Você errou :(");
+        }
+
+        if (numeroquestao == 3 && resposta >3){
+            audioerrado.play();
+            alert("Você errou :(");
+        }
+
+         if (numeroquestao == 4 && resposta == 3){
+            audiocerto.play();
+            alert("Você acertou :)");
+            score = 1 + score;
+        }
+
+         if (numeroquestao == 4 && resposta <3){
+            audioerrado.play();
+            alert("Você errou :(");  
+        }
+
+        if (numeroquestao == 4 && resposta >3){
+            audioerrado.play();
+            alert("Você errou :(");
+        }
+
+        if (numeroquestao == 5 && resposta ==1){
+            audiocerto.play();
+            alert("Você acertou :)"); 
+            score = 1 + score;
+        }
+
+         if (numeroquestao == 5 && resposta >1){
+            audioerrado.play();
+            alert("Você errou :(");
+        }
+         if (numeroquestao == 6 && resposta ==4){
+            audiocerto.play();
+            alert("Você acertou :)");
+            score = 1 + score;
+        }
+
+         if (numeroquestao == 6 && resposta <4){
+            audioerrado.play();
+            alert("Você errou :(");
+        }
+        if (numeroquestao == 7 && resposta == 2){
+            audiocerto.play();
+            alert("Você acertou :)");
+            score = 1 + score
+            audiofinal.play();
+            alert ("Você acertou " + score + " questões, recarregue a página para recomeçar");
+        }
+         if (numeroquestao == 7 && resposta >2){
+            audioerrado.play();
+            alert("Você errou :(");
+            audiofinal.play();
+            alert ("Você acertou " + score + " questões, recarregue a página para recomeçar");
+        }
+         if (numeroquestao == 7 && resposta <2){
+            audioerrado.play();
+            alert("Você errou :(");
+            audiofinal.play();
+            alert ("Você acertou " + score + " questões, recarregue a página para recomeçar");
+        }
+    }
+
+</script>
